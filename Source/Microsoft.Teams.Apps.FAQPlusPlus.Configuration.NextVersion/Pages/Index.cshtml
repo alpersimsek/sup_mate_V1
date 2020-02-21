@@ -1,0 +1,51 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<br />
+<br />
+<br />
+<div>Edit FAQPlusPlus configuration</div>
+<hr />
+
+<form asp-page="Index" method="post" name="saveFaqPlusPlusConfiguration" id="faqPlusPlusConfigurationForm">
+    <div class="control-group form-group">
+        <div class="controls">
+            <span class="glyphicon glyphicon-info-sign infoSignMargin" data-toggle="tooltip" title="@Resource.TeamIdToolTipHoverMessage"></span>
+            <label asp-for="FAQPlusPlusConfiguration.TeamId">Team ID</label>
+            <input asp-for="FAQPlusPlusConfiguration.TeamId" class="form-control">
+            <span asp-validation-for="FAQPlusPlusConfiguration.TeamId"></span>
+        </div>
+    </div>
+    <div class="control-group form-group">
+        <div class="controls">
+            <span class="glyphicon glyphicon-info-sign infoSignMargin" data-toggle="tooltip" title="@Resource.KnowledgeBaseToolTipHoverMessage"></span>
+            <label asp-for="FAQPlusPlusConfiguration.KnowledgeBaseId">Knowledge base ID</label>
+            <input asp-for="FAQPlusPlusConfiguration.KnowledgeBaseId" class="form-control">
+            <span asp-validation-for="FAQPlusPlusConfiguration.KnowledgeBaseId"></span>
+        </div>
+    </div>
+    <div class="control-group form-group">
+        <div class="controls">
+            <span class="glyphicon glyphicon-info-sign infoSignMargin" data-toggle="tooltip" title="@Resource.WelcomeMessageToolTipHoverMessage"></span>
+            <label asp-for="FAQPlusPlusConfiguration.WelcomeMessageText">Welcome message</label>
+            <textarea asp-for="FAQPlusPlusConfiguration.WelcomeMessageText" rows="5" cols="100" class="form-control"></textarea>
+            <span asp-validation-for="FAQPlusPlusConfiguration.WelcomeMessageText"></span>
+        </div>
+    </div>
+    <div class="control-group form-group">
+        <div class="controls">
+            <span class="glyphicon glyphicon-info-sign infoSignMargin" data-toggle="tooltip" title="@Resource.HelpTabTextToolTipHoverMessage"></span>
+            <label asp-for="FAQPlusPlusConfiguration.HelpTabText">Help tab text</label>
+            <div style="margin-right: 15px">
+                (Please note that this text will be accessible to anyone having access to the URL of the tab)
+            </div>
+            <textarea asp-for="FAQPlusPlusConfiguration.HelpTabText" rows="5" cols="100" class="form-control"></textarea>
+            <span asp-validation-for="FAQPlusPlusConfiguration.HelpTabText"></span>
+        </div>
+    </div>
+    <div id="success"></div>
+    <button type="submit" class="btn btn-success" id="saveFaqPlusPlusConfigurationButton">Save Configuration</button>
+</form>
